@@ -69,9 +69,9 @@ public class ComplianceRecordService {
         if (record.getDate() == null) {
             record.setDate(LocalDateTime.now());
         }
-
-        ComplianceRecord saved = complianceRecordRepository.save(record);
         Integer userId = resolveAuthenticatedUserId();
+        record.setOfficerId(userId);
+        ComplianceRecord saved = complianceRecordRepository.save(record);
         sendNotification(userId, saved.getComplianceId(), "COMPLIANCE_RECORD", "COMPLIANCE");
 
         return toResponse(saved);

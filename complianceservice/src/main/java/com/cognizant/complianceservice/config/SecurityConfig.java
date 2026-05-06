@@ -34,7 +34,7 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         // Register allowed internally
-                        .requestMatchers("/api/compliance/**").hasRole("COMPLIANCE")
+                        .requestMatchers("/api/compliance/**").hasAnyRole("COMPLIANCE","ADMIN")
                         .requestMatchers("/api/audit/**").hasRole("AUDITOR")
                         .anyRequest().authenticated()
                 )

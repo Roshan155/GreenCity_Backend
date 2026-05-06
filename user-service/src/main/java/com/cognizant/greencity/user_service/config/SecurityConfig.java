@@ -25,7 +25,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Register allowed internally
                         .requestMatchers("/api/users/register", "/api/users/username/**","/api/users/getid/**").permitAll()
-                        .requestMatchers("/api/users/**").hasAnyRole("CITIZEN","COMPLIANCE","AUDITOR", "PLANNER")
+                        .requestMatchers("/api/users/**").hasAnyRole("CITIZEN","COMPLIANCE","AUDITOR", "PLANNER","ADMIN")
                         .anyRequest().authenticated()
                 ).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 

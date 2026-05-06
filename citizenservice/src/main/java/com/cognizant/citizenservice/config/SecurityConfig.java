@@ -25,8 +25,8 @@ public class SecurityConfig {
                         // Register allowed internally
                         .requestMatchers("/api/citizen/all").hasAnyRole("CITIZEN", "ADMIN")
                         .requestMatchers("/api/feedback/all").hasAnyRole("CITIZEN", "ADMIN")
-                        .requestMatchers("/api/citizen/**").hasRole("CITIZEN")
-                        .requestMatchers("/api/feedback/**").hasRole("CITIZEN")
+                        .requestMatchers("/api/citizen/**").hasAnyRole("CITIZEN","ADMIN")
+                        .requestMatchers("/api/feedback/**").hasAnyRole("CITIZEN","ADMIN")
                         .anyRequest().authenticated()
                 ).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
