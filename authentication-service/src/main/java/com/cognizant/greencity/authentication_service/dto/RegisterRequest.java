@@ -1,6 +1,7 @@
 package com.cognizant.greencity.authentication_service.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import jakarta.validation.constraints.Size;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class RegisterRequest {
 
     @NotBlank(message = "Name cannot be blank")
