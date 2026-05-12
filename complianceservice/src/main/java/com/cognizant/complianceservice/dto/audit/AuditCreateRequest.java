@@ -2,15 +2,17 @@ package com.cognizant.complianceservice.dto.audit;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class AuditCreateRequest {
     @NotBlank
     @Size(max = 255)
@@ -29,4 +31,3 @@ public class AuditCreateRequest {
     private String findings;
 
 }
-

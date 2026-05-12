@@ -1,0 +1,4 @@
+com\cognizant\citizenservice\dto\report\CitizenReportResponse$CitizenReportResponseBuilder.class
+com\cognizant\citizenservice\dto\report\CitizenReportCreateRequest$CitizenReportCreateRequestBuilder.class
+com\cognizant\citizenservice\dto\feedback\FeedbackCreateRequest$FeedbackCreateRequestBuilder.class
+com\cognizant\citizenservice\dto\feedback\FeedbackResponse$FeedbackResponseBuilder.class

@@ -1,0 +1,4 @@
+com\cognizant\greencity\user_service\dto\user\UserResponse$UserResponseBuilder.class
+com\cognizant\greencity\user_service\dto\user\UserUpdateRequest$UserUpdateRequestBuilder.class
+com\cognizant\greencity\user_service\dto\user\UserDetailsDTO$UserDetailsDTOBuilder.class
+com\cognizant\greencity\user_service\dto\user\UserDTO$UserDTOBuilder.class
