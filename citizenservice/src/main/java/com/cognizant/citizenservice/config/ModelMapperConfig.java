@@ -16,7 +16,7 @@ public class ModelMapperConfig {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setAmbiguityIgnored(true);
 
-        // These ID fields are populated manually in services from nested entities.
+
 
         modelMapper.typeMap(CitizenReport.class, CitizenReportResponse.class)
                 .addMappings(mapper -> mapper.skip(CitizenReportResponse::setCitizenId));

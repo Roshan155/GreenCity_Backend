@@ -31,28 +31,28 @@ public class JwtUtil {
                 .compact();
     }
 
-    // Extract username
+
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
-    // Extract role
+
     public String extractRole(String token) {
         return extractClaim(token, claims -> claims.get("role", String.class));
     }
 
-    // Extract expiration
+
     public Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
 
-    // Extract specific claim
+
     public <T> T extractClaim(String token, Function<Claims, T> resolver) {
         final Claims claims = extractAllClaims(token);
         return resolver.apply(claims);
     }
 
-    // Extract all claims (Updated for 0.13.0)
+
     private Claims extractAllClaims(String token) {
         return Jwts.parser() // parserBuilder() is now just parser()
                 .verifyWith(getSigningKey()) // setSigningKey is replaced by verifyWith

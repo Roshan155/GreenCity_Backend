@@ -17,7 +17,7 @@ public class SecurityConfig {
                 // Enable CORS with default settings (useful if your frontend is on a different port)
                 .cors(Customizer.withDefaults())
 
-                // Disabling CSRF is common for stateless APIs/Gateways
+                // Disabling CSRF
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
 
                 // Permitting all exchanges so your custom JwtAuthFilter can manage security logic

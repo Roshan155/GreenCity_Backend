@@ -32,10 +32,9 @@ public class CitizenReportService {
     private final NotificationClient notificationClient;
     private final ModelMapper modelMapper;
 
-    public List<CitizenReportResponse> listMine(Authentication authentication) {
+    public List<CitizenReportResponse> listMine(Authentication authentication) { // admin
         UserDTO user = userClient.getuserId(authentication.getName());
         Integer userId = user.getUserId();
-        // Change findByCitizen_UserId to findByCitizen
         return citizenReportRepository.findByCitizen(userId).stream()
                 .map(this::toResponse).toList();
     }
