@@ -15,12 +15,6 @@ public class ModelMapperConfig {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setAmbiguityIgnored(true);
 
-         modelMapper.typeMap(Audit.class, AuditResponse.class)
-                .addMappings(mapper -> {
-                    mapper.skip(AuditResponse::setComplianceId);
-                    mapper.skip(AuditResponse::setOfficerId);
-                });
-
         return modelMapper;
     }
 }

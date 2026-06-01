@@ -16,13 +16,6 @@ public class ModelMapperConfig {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setAmbiguityIgnored(true);
 
-
-
-        modelMapper.typeMap(CitizenReport.class, CitizenReportResponse.class)
-                .addMappings(mapper -> mapper.skip(CitizenReportResponse::setCitizenId));
-        modelMapper.typeMap(Feedback.class, FeedbackResponse.class)
-                .addMappings(mapper -> mapper.skip(FeedbackResponse::setCitizenId));
-
         return modelMapper;
     }
 }
